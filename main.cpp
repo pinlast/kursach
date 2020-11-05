@@ -1,3 +1,6 @@
+#define PY_SSIZE_T_CLEAN
+
+#include <Python.h>  // adding python implementation
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
