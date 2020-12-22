@@ -89,7 +89,7 @@ int tracer(pid_t pid, user_regs_struct regs, std::string mode)
             /* Syscall entry */
             char* str = getdata(pid, regs.rsi, regs.rdx);
             reverse(str);
-            putdata(pid, params[1], str, regs.rdx);
+            putdata(pid, regs.rsi, str, regs.rdx);
             }
          else { /* Syscall exit */
             in_call = 0;
