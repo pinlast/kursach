@@ -82,7 +82,7 @@ int tracer(pid_t pid, user_regs_struct regs, std::string mode)
     } else if (mode == "reverse")
     {
       printf((message + "\n").c_str());
-
+      counter++;
       if(regs.orig_rax == SYS_write) {
          if(in_call == 0) {
              in_call = 1;
