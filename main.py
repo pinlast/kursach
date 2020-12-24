@@ -30,13 +30,17 @@ def format_data(calls):
     return pd.DataFrame(result, columns=('syscall', 'кількість'))
 
 
-while True:
-    try:
-        print('listening')
-        gathered_calls = listen()
-        formatted = format_data(gathered_calls)
-        sns.catplot(x="syscall", y='кількість', kind="bar", palette="ch:.25", data=formatted)
-        plt.show()
-    except KeyboardInterrupt:
-        print('\nBye')
-        break
+def main():
+    while True:
+        try:
+            print('listening')
+            gathered_calls = listen()
+            formatted = format_data(gathered_calls)
+            sns.catplot(x="syscall", y='кількість', kind="bar", palette="ch:.25", data=formatted)
+            plt.show()
+        except KeyboardInterrupt:
+            print('\nBye')
+            break
+
+if __name__ == '__main__':
+    main()
